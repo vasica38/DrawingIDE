@@ -55,7 +55,7 @@
     <Compile Include="Core\Drawables\GraphicsSizeDrawer.cs" />
     <Compile Include="Core\Drawables\ImageDrawer.cs" />
     <Compile Include="Core\Drawables\LineDrawer.cs" />
-    <Compile Include="Core\Drawables\MouseDrawer.cs" />
+    <Compile Include="Core\Drawables\MouseMoveDrawer.cs" />
     <Compile Include="Core\Drawables\RectangleDrawer.cs" />
     <Compile Include="Core\Drawables\StrokeSizeDrawer.cs" />
     <Compile Include="Core\Drawables\TextDrawer.cs" />

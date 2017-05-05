@@ -1,4 +1,5 @@
 ﻿using DrawIde.Core;
+using DrawIde.Core.Drawables;
 using DrawIde.Core.ExpressionParsers;
 using System;
 using System.Collections.Generic;
@@ -20,6 +21,7 @@ namespace DrawIde
         private readonly DrawingForm drawingForm;
         private readonly IExpressionParser expressionParser;
         private readonly IDrawingContext drawingContext;
+        private readonly MouseMoveDrawer mouserMoveDrawer;
 
         public MainForm()
         {
@@ -27,12 +29,14 @@ namespace DrawIde
             this.drawingForm = new DrawingForm();
             this.expressionParser = new ExpressionParser();
             this.drawingContext = new DrawingContext(this.drawingForm);
+            this.mouserMoveDrawer = new MouseMoveDrawer();
             Init();
         }
 
         private void Init()
         {
             drawingForm.Show();
+            this.mouserMoveDrawer.Draw(this.drawingContext);
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -95,7 +99,15 @@ namespace DrawIde
                     }
                     catch (Exception exception)
                     {
-                        statusTextBox.Text = string.Format("Invalid expression '{0}'\nException: '{1}'", expressions[index], exception.Message);
+                        if (index >= expressions.Length)
+                        {
+                            statusTextBox.Text = string.Format("Invalid expression \nException: '{0}'", exception.Message);
+                        }
+                        else
+                        {
+                            statusTextBox.Text = string.Format("Invalid expression '{0}'\nException: '{1}'", expressions[index], exception.Message);
+                        }
+
                         break;
                     }
                 }

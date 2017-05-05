@@ -8,7 +8,7 @@ namespace DrawIde.Core.ExpressionParsers
     class ForExpressionParser : IExpressionParser
     {
         private static readonly string MATCH_HEADER = @"^FOR (?<variable>\w+)=(?<startValue>\d+) TO (?<endValue>\d+) STEP (?<stepValue>\d+) DO$";
-        private static readonly string MATCH_FULL = @"^FOR (?<variable>\w+)=(?<startValue>\d+) TO (?<endValue>\d+) STEP (?<stepValue>\d+) DO[\s]*\{[\s]*(?<body>[\s\S]+)[\s]*\}$";
+        private static readonly string MATCH_FULL = @"^FOR (?<variable>\w+)=(?<startValue>\d+) TO (?<endValue>\d+) STEP (?<stepValue>\d+) DO[\s]*\{[\s]*(?<body>[\s\S]+)[\s]*\}";
 
         public bool MatchesExpression(string expression)
         {
