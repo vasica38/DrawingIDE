@@ -84,14 +84,6 @@ namespace DrawIde.Core
             }
         }
 
-        public Graphics Graphics
-        {
-            get
-            {
-                return this.drawingForm.Graphics;
-            }
-        }
-
         public string FontStyle
         {
             get
@@ -104,6 +96,14 @@ namespace DrawIde.Core
             }
         }
 
+        public Graphics Graphics
+        {
+            get
+            {
+                return this.drawingForm.Graphics;
+            }
+        }
+
         public DrawingContext(DrawingForm drawingForm)
         {
             this.drawingForm = drawingForm;
@@ -111,6 +111,15 @@ namespace DrawIde.Core
             this.FontSize = 1;
             this.Stroke = 1;
             this.FontSize = 12;
+            this.FontStyle = "Arial";
+        }
+
+        public void Reset()
+        {
+            this.Graphics.Clear(System.Drawing.Color.White);
+            this.Color = "Black";
+            this.FontSize = 1;
+            this.Stroke = 1;
             this.FontStyle = "Arial";
         }
     }

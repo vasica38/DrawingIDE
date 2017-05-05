@@ -9,6 +9,7 @@ using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -79,7 +80,7 @@ namespace DrawIde
 
         private void textEditor_TextChanged(object sender, EventArgs e)
         {
-            this.drawingForm.Graphics.Clear(Color.White);
+            this.drawingContext.Reset();
             statusTextBox.Text = string.Empty;
             var expressions = textEditor.Text.Split(new[] { "\r\n", "\n" }, StringSplitOptions.RemoveEmptyEntries);
             foreach (var expression in expressions)
