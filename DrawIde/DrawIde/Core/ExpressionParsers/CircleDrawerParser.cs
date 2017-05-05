@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DrawIde.Core.Drawables;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,12 +24,11 @@ namespace DrawIde.Core.ExpressionParsers
             {
                 return null;
             }
-        
+
             var x = Convert.ToInt32(match.Groups["x"].Value);
             var y = Convert.ToInt32(match.Groups["y"].Value);
-            var radius = Convert.ToInt32(match.Groups["radius"].Value);      
-            //return new GraphicsRectangleDrawer(x1,y1,x2,y2);
-            return null;
+            var radius = Convert.ToInt32(match.Groups["radius"].Value);
+            return new CircleDrawer(x, y, radius);
         }
     }
 }
