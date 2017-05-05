@@ -51,6 +51,7 @@
     <Compile Include="Core\Drawables\GraphicsSizeDrawer.cs" />
     <Compile Include="Core\Drawables\LineDrawer.cs" />
     <Compile Include="Core\Drawables\RectangleDrawer.cs" />
+    <Compile Include="Core\Drawables\StrokeSizeDrawer.cs" />
     <Compile Include="Core\DrawingContext.cs" />
     <Compile Include="Core\ExpressionParsers\BackgroundColorParser.cs" />
     <Compile Include="Core\ExpressionParsers\CircleDrawerParser.cs" />
@@ -60,6 +61,7 @@
     <Compile Include="Core\ExpressionParsers\GraphicsSizeParser.cs" />
     <Compile Include="Core\ExpressionParsers\LineDrawerParser.cs" />
     <Compile Include="Core\ExpressionParsers\RectangleDrawerParser.cs" />
+    <Compile Include="Core\ExpressionParsers\StrokeSizeParser.cs" />
     <Compile Include="Core\IDrawable.cs" />
     <Compile Include="Core\IDrawingContext.cs" />
     <Compile Include="Core\IExpressionParser.cs" />

@@ -23,7 +23,7 @@ namespace DrawIde.Core.Drawables
         public void Draw(IDrawingContext context)
         {
             var graphics = context.Graphics;
-            Pen pen = new Pen(System.Drawing.Color.FromName(context.Color));
+            Pen pen = new Pen(System.Drawing.Color.FromName(context.Color), context.Stroke);
             graphics.DrawRectangle(pen, new Rectangle(x, y, x1, y1));
         }
     }
