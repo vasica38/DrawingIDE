@@ -9,7 +9,7 @@ namespace DrawIde.Core.ExpressionParsers
 {
     class RectangleDrawerParser : IExpressionParser
     {
-        private static readonly string MATCH = @"^RECTANGLE (?<x1>[0-9]+)[,][ ]+(?<y1>[0-9]+)[,][ ]+(?<x2>[0-9]+)[,][ ]+(?<y2>[0-9]+)[ ]?$";
+        private static readonly string MATCH = @"^RECTANGLE (?<x1>[0-9]+)[,][ ]*(?<y1>[0-9]+)[,][ ]*(?<x2>[0-9]+)[,][ ]*(?<y2>[0-9]+)[ ]?$";
 
         public bool MatchesExpression(string expression)
         {
