@@ -11,6 +11,12 @@ namespace DrawIde.Core.ExpressionParsers
         {
             this.expressionParsers = new List<IExpressionParser>();
             this.expressionParsers.Add(new GraphicsSizeParser());
+            this.expressionParsers.Add(new BackgroundColorParser());
+            this.expressionParsers.Add(new ColorSetterParser());
+            this.expressionParsers.Add(new CircleDrawerParser());
+            this.expressionParsers.Add(new ForInstructionParser());
+            this.expressionParsers.Add(new LineDrawerParser());
+            this.expressionParsers.Add(new RectangleDrawerParser());
         }
 
         public bool MatchesExpression(string expression)

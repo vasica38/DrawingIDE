@@ -1,12 +1,16 @@
-﻿using DrawIde.Core.Drawables;
-using System;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 
 namespace DrawIde.Core.ExpressionParsers
 {
-    class GraphicsSizeParser : IExpressionParser
+    class BackgroundColorParser : IExpressionParser
     {
-        private static readonly string MATCH = @"DRAW (?<height>[0-9]+)[,][ ]*(?<width>[0-9]+)$";
+        private static readonly string MATCH = @"BACKGROUND (?<color>((red)|(black)|(green)|(blue)|(grey)|(pink)))";
+
 
         public bool MatchesExpression(string expression)
         {
@@ -21,9 +25,9 @@ namespace DrawIde.Core.ExpressionParsers
                 return null;
             }
 
-            var height = Convert.ToInt32(match.Groups["height"].Value);
-            var width = Convert.ToInt32(match.Groups["width"].Value);
-            return new GraphicsSizeDrawer(height, width);
+            var color = match.Groups["color"].Value;
+            //return new GraphicsBackgroundColor(color);
+            return null;
         }
     }
 }
