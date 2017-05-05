@@ -11,6 +11,8 @@ Draw IDE
 <b>RECTANGLE</b> 100,100, 200, 200, true => draw a rectangle between those two coordinates.<br>
 <b>TEXT</b> 'hello world', 100,100 => writes text 'hello world' to coordinates 100,100.<br>
 <b>ANIMATE</b>  => Animation.<br>
+<b>STROKE</b> 10  => Set stroke size.<br>
+<b>TEXT SIZE</b> 10  => Set text size.<br>
 <br>
 For and if example <br>
 FOR i=10 TO 100 STEP 10 DO <br>
