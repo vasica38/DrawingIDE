@@ -28,5 +28,11 @@ namespace DrawIde.Core.ExpressionParsers
             var fill = Convert.ToBoolean(match.Groups["fill"].Value);
             return new RectangleDrawer(x1, y1, x2, y2, fill);
         }
+
+        public IDrawable Parse(string[] expressions, ref int index)
+        {
+            index++;
+            return Parse(expressions[index - 1]);
+        }
     }
 }

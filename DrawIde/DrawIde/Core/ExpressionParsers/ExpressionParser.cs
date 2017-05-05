@@ -15,7 +15,7 @@ namespace DrawIde.Core.ExpressionParsers
             this.expressionParsers.Add(new ColorSetterParser());
             this.expressionParsers.Add(new CircleDrawerParser());
             this.expressionParsers.Add(new FontStyleParser());
-            this.expressionParsers.Add(new ForInstructionParser());
+            this.expressionParsers.Add(new ForExpressionParser());
             this.expressionParsers.Add(new ImageParser());
             this.expressionParsers.Add(new LineDrawerParser());
             this.expressionParsers.Add(new RectangleDrawerParser());
@@ -29,13 +29,13 @@ namespace DrawIde.Core.ExpressionParsers
             return true;
         }
 
-        public IDrawable Parse(string expression)
+        public IDrawable Parse(string[] expressions, ref int index)
         {
             foreach (var expressionParser in this.expressionParsers)
             {
-                if (expressionParser.MatchesExpression(expression))
+                if (expressionParser.MatchesExpression(expressions[index]))
                 {
-                    return expressionParser.Parse(expression);
+                    return expressionParser.Parse(expressions, ref index);
                 }
             }
 

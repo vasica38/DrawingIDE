@@ -83,9 +83,10 @@ namespace DrawIde
             this.drawingContext.Reset();
             statusTextBox.Text = string.Empty;
             var expressions = textEditor.Text.Split(new[] { "\r\n", "\n" }, StringSplitOptions.RemoveEmptyEntries);
-            foreach (var expression in expressions)
+            var index = 0;
+            while (index < expressions.Length)
             {
-                var drawable = this.expressionParser.Parse(expression);
+                var drawable = this.expressionParser.Parse(expressions, ref index);
                 if (drawable != null)
                 {
                     try
@@ -94,13 +95,13 @@ namespace DrawIde
                     }
                     catch (Exception exception)
                     {
-                        statusTextBox.Text = string.Format("Invalid expression '{0}'\nException: '{1}'", expression, exception.Message);
+                        statusTextBox.Text = string.Format("Invalid expression '{0}'\nException: '{1}'", expressions[index], exception.Message);
                         break;
                     }
                 }
                 else
                 {
-                    statusTextBox.Text = string.Format("Invalid expression '{0}'", expression);
+                    statusTextBox.Text = string.Format("Invalid expression '{0}'", expressions[index]);
                     break;
                 }
             }

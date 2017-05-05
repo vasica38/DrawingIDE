@@ -27,5 +27,11 @@ namespace DrawIde.Core.ExpressionParsers
             var fill = Convert.ToBoolean(match.Groups["fill"].Value);
             return new CircleDrawer(x, y, radius, fill);
         }
+
+        public IDrawable Parse(string[] expressions, ref int index)
+        {
+            index++;
+            return Parse(expressions[index - 1]);
+        }
     }
 }

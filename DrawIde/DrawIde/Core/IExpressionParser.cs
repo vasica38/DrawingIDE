@@ -2,7 +2,7 @@
 {
     interface IExpressionParser
     {
-        IDrawable Parse(string expression);
+        IDrawable Parse(string[] expressions, ref int index);
         bool MatchesExpression(string expression);
     }
 }

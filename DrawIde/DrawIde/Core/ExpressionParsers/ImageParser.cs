@@ -26,5 +26,11 @@ namespace DrawIde.Core.ExpressionParsers
             var path = match.Groups["path"].Value;
             return new ImageDrawer(x, y, path);
         }
+
+        public IDrawable Parse(string[] expressions, ref int index)
+        {
+            index++;
+            return Parse(expressions[index - 1]);
+        }
     }
 }

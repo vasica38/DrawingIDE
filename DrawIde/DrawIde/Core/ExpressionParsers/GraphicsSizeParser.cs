@@ -25,5 +25,11 @@ namespace DrawIde.Core.ExpressionParsers
             var width = Convert.ToInt32(match.Groups["width"].Value);
             return new GraphicsSizeDrawer(height, width);
         }
+
+        public IDrawable Parse(string[] expressions, ref int index)
+        {
+            index++;
+            return Parse(expressions[index - 1]);
+        }
     }
 }

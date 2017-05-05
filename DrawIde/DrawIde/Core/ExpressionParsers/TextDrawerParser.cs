@@ -31,5 +31,11 @@ namespace DrawIde.Core.ExpressionParsers
 
             return new TextDrawer(text, x, y);
         }
+
+        public IDrawable Parse(string[] expressions, ref int index)
+        {
+            index++;
+            return Parse(expressions[index - 1]);
+        }
     }
 }

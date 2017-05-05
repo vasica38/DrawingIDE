@@ -29,5 +29,11 @@ namespace DrawIde.Core.ExpressionParsers
             var color = match.Groups["color"].Value;
             return new BackgroundColorDrawer(color);
         }
+
+        public IDrawable Parse(string[] expressions, ref int index)
+        {
+            index++;
+            return Parse(expressions[index - 1]);
+        }
     }
 }
