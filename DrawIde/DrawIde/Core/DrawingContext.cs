@@ -94,6 +94,9 @@ namespace DrawIde.Core
         public DrawingContext(DrawingForm drawingForm)
         {
             this.drawingForm = drawingForm;
+            this.Color = "black";
+            this.FontSize = 1;
+            this.Stroke = 1;
         }
     }
 }

@@ -39,6 +39,7 @@ namespace DrawIde
 
         private void textEditor_TextChanged(object sender, EventArgs e)
         {
+            this.drawingForm.Graphics.Clear(Color.White);
             statusTextBox.Text = string.Empty;
             var expressions = textEditor.Text.Split(new[] { "\r\n", "\n" }, StringSplitOptions.RemoveEmptyEntries);
             foreach (var expression in expressions)
