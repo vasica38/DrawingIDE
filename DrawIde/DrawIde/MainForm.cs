@@ -95,7 +95,15 @@ namespace DrawIde
                     }
                     catch (Exception exception)
                     {
-                        statusTextBox.Text = string.Format("Invalid expression '{0}'\nException: '{1}'", expressions[index], exception.Message);
+                        if (index >= expressions.Length)
+                        {
+                            statusTextBox.Text = string.Format("Invalid expression \nException: '{0}'", exception.Message);
+                        }
+                        else
+                        {
+                            statusTextBox.Text = string.Format("Invalid expression '{0}'\nException: '{1}'", expressions[index], exception.Message);
+                        }
+
                         break;
                     }
                 }
