@@ -21,6 +21,8 @@ line @i,@i,10,100 <br>
 } <br>
 <br>
 
+<b> true or false in argument is for setting if the figure is filled<b>
+
 
 
 
