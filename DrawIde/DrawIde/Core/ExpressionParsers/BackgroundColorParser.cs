@@ -10,11 +10,12 @@ namespace DrawIde.Core.ExpressionParsers
 {
     class BackgroundColorParser : IExpressionParser
     {
-        private static readonly string MATCH = @"^BACKGROUND (?<color>((red)|(black)|(green)|(blue)|(grey)|(pink)))$";
+        private static readonly string MATCH = @"^BACKGROUND (?<color>((white)|(red)|(black)|(green)|(blue)|(grey)|(pink)))$";
 
         public bool MatchesExpression(string expression)
         {
-            return Regex.Match(expression, MATCH, RegexOptions.IgnoreCase).Success;
+            return false;
+            //return Regex.Match(expression, MATCH, RegexOptions.IgnoreCase).Success;
         }
 
         public IDrawable Parse(string expression)

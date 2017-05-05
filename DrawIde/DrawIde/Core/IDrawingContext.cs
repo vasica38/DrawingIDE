@@ -12,5 +12,7 @@ namespace DrawIde.Core
         string FontStyle { get; set; }
         int Stroke { get; set; }
         Graphics Graphics { get; }
+
+        void Reset();
     }
 }
