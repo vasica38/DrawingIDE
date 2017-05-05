@@ -9,6 +9,7 @@ namespace DrawIde.Core
         string BackgroundColor { get; set; }
         string Color { get; set; }
         int FontSize { get; set; }
+        string FontStyle { get; set; }
         int Stroke { get; set; }
         Graphics Graphics { get; }
     }

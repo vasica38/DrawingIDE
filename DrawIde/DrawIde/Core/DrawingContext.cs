@@ -8,6 +8,7 @@ namespace DrawIde.Core
     {
         private readonly DrawingForm drawingForm;
         private string color;
+        private string fontStyle;
         private int fontSize;
         private int stroke;
 
@@ -91,12 +92,26 @@ namespace DrawIde.Core
             }
         }
 
+        public string FontStyle
+        {
+            get
+            {
+                return this.fontStyle;
+            }
+            set
+            {
+                this.fontStyle = value;
+            }
+        }
+
         public DrawingContext(DrawingForm drawingForm)
         {
             this.drawingForm = drawingForm;
             this.Color = "black";
             this.FontSize = 1;
             this.Stroke = 1;
+            this.FontSize = 12;
+            this.FontStyle = "Arial";
         }
     }
 }
