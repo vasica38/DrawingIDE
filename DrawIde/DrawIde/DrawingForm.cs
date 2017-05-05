@@ -18,7 +18,7 @@ namespace DrawIde
         {
             get
             {
-                return this.graphics;
+                return this.CreateGraphics();
             }
         }
 

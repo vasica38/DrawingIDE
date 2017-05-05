@@ -1,16 +1,12 @@
 ﻿using DrawIde.Core.Drawables;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace DrawIde.Core.ExpressionParsers
 {
     class CircleDrawerParser : IExpressionParser
     {
-        private static readonly string MATCH = @"^CIRCLE (?<x>[0-9]+)[,][ ]*(?<y>[0-9]+)[,][ ]*(?<radius>[0-9]+)[ ]?$";
+        private static readonly string MATCH = @"^CIRCLE (?<x>[0-9]+)[,][ ]*(?<y>[0-9]+)[,][ ]*(?<radius>[0-9]+)[,][ ]*(?<fill>((true)|(false)))$";
 
         public bool MatchesExpression(string expression)
         {
@@ -28,7 +24,8 @@ namespace DrawIde.Core.ExpressionParsers
             var x = Convert.ToInt32(match.Groups["x"].Value);
             var y = Convert.ToInt32(match.Groups["y"].Value);
             var radius = Convert.ToInt32(match.Groups["radius"].Value);
-            return new CircleDrawer(x, y, radius);
+            var fill = Convert.ToBoolean(match.Groups["fill"].Value);
+            return new CircleDrawer(x, y, radius, fill);
         }
     }
 }

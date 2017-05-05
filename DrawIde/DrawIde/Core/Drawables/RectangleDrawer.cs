@@ -1,30 +1,36 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Drawing;
 
 namespace DrawIde.Core.Drawables
 {
     class RectangleDrawer : IDrawable
     {
-        int x, y;
-        int x1, y1;
+        private readonly int x1;
+        private readonly int y1;
+        private readonly int x2;
+        private readonly int y2;
+        private readonly bool fill;
 
-        public RectangleDrawer(int x, int y, int x1, int y1)
+        public RectangleDrawer(int x1, int y1, int x2, int y2, bool fill)
         {
-            this.x = x;
-            this.y = y;
             this.x1 = x1;
             this.y1 = y1;
+            this.x2 = x2;
+            this.y2 = y2;
+            this.fill = fill;
         }
 
         public void Draw(IDrawingContext context)
         {
-            var graphics = context.Graphics;
-            Pen pen = new Pen(System.Drawing.Color.FromName(context.Color), context.Stroke);
-            graphics.DrawRectangle(pen, new Rectangle(x, y, x1, y1));
+            if (this.fill)
+            {
+                var brush = new SolidBrush(Color.FromName(context.Color));
+                context.Graphics.FillRectangle(brush, x1, y1, x2, y2);
+            }
+            else
+            {
+                var pen = new Pen(Color.FromName(context.Color), context.Stroke);
+                context.Graphics.DrawRectangle(pen, new Rectangle(x1, y1, x2, y2));
+            }
         }
     }
 }

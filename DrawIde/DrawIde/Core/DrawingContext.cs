@@ -117,6 +117,7 @@ namespace DrawIde.Core
         public void Reset()
         {
             this.Graphics.Clear(System.Drawing.Color.White);
+            this.BackgroundColor = "White";
             this.Color = "Black";
             this.FontSize = 1;
             this.Stroke = 1;

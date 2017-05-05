@@ -8,18 +8,28 @@ namespace DrawIde.Core.Drawables
         private readonly int x;
         private readonly int y;
         private readonly int radius;
+        private readonly bool fill;
 
-        public CircleDrawer(int x, int y, int radius)
+        public CircleDrawer(int x, int y, int radius, bool fill)
         {
             this.x = x;
             this.y = y;
             this.radius = radius;
+            this.fill = fill;
         }
 
         public void Draw(IDrawingContext context)
         {
-            var pen = new Pen(Color.FromName(context.Color), context.Stroke);
-            context.Graphics.DrawEllipse(pen, x - radius, y - radius, radius + radius, radius + radius);
+            if (fill)
+            {
+                var brush = new SolidBrush(Color.FromName(context.Color));
+                context.Graphics.FillEllipse(brush, x - radius, y - radius, radius + radius, radius + radius);
+            }
+            else
+            {
+                var pen = new Pen(Color.FromName(context.Color), context.Stroke);
+                context.Graphics.DrawEllipse(pen, x - radius, y - radius, radius + radius, radius + radius);
+            }
         }
     }
 }
