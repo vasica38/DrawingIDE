@@ -15,7 +15,8 @@ namespace DrawIde.Core.Drawables
 
         public void Draw(IDrawingContext context)
         {
-            throw new NotImplementedException();
+            context.Heigth = this.height;
+            context.Width = this.width;
         }
     }
 }

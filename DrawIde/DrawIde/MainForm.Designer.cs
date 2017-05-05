@@ -40,6 +40,7 @@
             this.textEditor.Size = new System.Drawing.Size(750, 500);
             this.textEditor.TabIndex = 0;
             this.textEditor.Text = "";
+            this.textEditor.TextChanged += new System.EventHandler(this.textEditor_TextChanged);
             // 
             // btnSave
             // 
@@ -49,10 +50,12 @@
             this.btnSave.TabIndex = 1;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // statusTextBox
             // 
             this.statusTextBox.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.statusTextBox.ForeColor = System.Drawing.Color.Red;
             this.statusTextBox.Location = new System.Drawing.Point(15, 547);
             this.statusTextBox.Name = "statusTextBox";
             this.statusTextBox.Size = new System.Drawing.Size(750, 74);

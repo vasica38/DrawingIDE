@@ -12,6 +12,14 @@ namespace DrawIde
 {
     public partial class DrawingForm : Form
     {
+        public Graphics Graphics
+        {
+            get
+            {
+                return this.CreateGraphics();
+            }
+        }
+
         public DrawingForm()
         {
             InitializeComponent();
