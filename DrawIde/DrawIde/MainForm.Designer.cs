@@ -94,6 +94,7 @@
             this.Controls.Add(this.statusTextBox);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.textEditor);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "MainForm";
             this.Text = "Draw IDE";
             this.ResumeLayout(false);

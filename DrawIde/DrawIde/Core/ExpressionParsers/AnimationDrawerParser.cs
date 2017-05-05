@@ -1,10 +1,5 @@
 ﻿using DrawIde.Core.Drawables;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace DrawIde.Core.ExpressionParsers
 {
@@ -31,7 +26,6 @@ namespace DrawIde.Core.ExpressionParsers
                 return null;
             }
 
-            var color = match.Groups["color"].Value;
             return new AnimationDrawer();
         }
     }
