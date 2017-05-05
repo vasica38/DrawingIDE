@@ -96,6 +96,8 @@ namespace DrawIde.Core
             }
         }
 
+        public event MouseEventHandler MouseMove;
+
         public Graphics Graphics
         {
             get
@@ -112,6 +114,7 @@ namespace DrawIde.Core
             this.Stroke = 1;
             this.FontSize = 12;
             this.FontStyle = "Arial";
+            this.drawingForm.MouseMove += DrawingForm_MouseMove;
         }
 
         public void Reset()
@@ -122,6 +125,14 @@ namespace DrawIde.Core
             this.FontSize = 1;
             this.Stroke = 1;
             this.FontStyle = "Arial";
+        }
+
+        private void DrawingForm_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (this.MouseMove != null)
+            {
+                this.MouseMove(sender, e);
+            }
         }
     }
 }

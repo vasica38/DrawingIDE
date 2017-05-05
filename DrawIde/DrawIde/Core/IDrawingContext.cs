@@ -1,4 +1,5 @@
 ﻿using System.Drawing;
+using System.Windows.Forms;
 
 namespace DrawIde.Core
 {
@@ -12,6 +13,7 @@ namespace DrawIde.Core
         string FontStyle { get; set; }
         int Stroke { get; set; }
         Graphics Graphics { get; }
+        event MouseEventHandler MouseMove;
 
         void Reset();
     }
