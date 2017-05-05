@@ -48,6 +48,7 @@
     <Compile Include="Core\Drawables\ColorSetterDrawer.cs" />
     <Compile Include="Core\Drawables\BackgroundColorDrawer.cs" />
     <Compile Include="Core\Drawables\GraphicsSizeDrawer.cs" />
+    <Compile Include="Core\Drawables\LineDrawer.cs" />
     <Compile Include="Core\DrawingContext.cs" />
     <Compile Include="Core\ExpressionParsers\BackgroundColorParser.cs" />
     <Compile Include="Core\ExpressionParsers\CircleDrawerParser.cs" />

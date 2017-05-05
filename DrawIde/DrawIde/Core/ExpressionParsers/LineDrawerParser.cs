@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DrawIde.Core.Drawables;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,7 +10,7 @@ namespace DrawIde.Core.ExpressionParsers
 {
     class LineDrawerParser : IExpressionParser
     {
-        private static readonly string MATCH = @"^LINE (?<x1>[0-9]+)[,][ ]+(?<y1>[0-9]+)[,][ ]+(?<x2>[0-9]+)[,][ ]+(?<y2>[0-9]+)[ ]?$";
+        private static readonly string MATCH = @"^LINE (?<x1>[0-9]+)[,][ ]*(?<y1>[0-9]+)[,][ ]*(?<x2>[0-9]+)[,][ ]*(?<y2>[0-9]+)[ ]?$";
 
 
         public bool MatchesExpression(string expression)
@@ -29,8 +30,8 @@ namespace DrawIde.Core.ExpressionParsers
             var y1 = Convert.ToInt32(match.Groups["y1"].Value);
             var x2 = Convert.ToInt32(match.Groups["x2"].Value);
             var y2 = Convert.ToInt32(match.Groups["y2"].Value);
-            //return new GraphicsLineDrawer(x1,y1,x2,y2);
-            return null;
+
+            return new LineDrawer(x1,y1,x2,y2);
         }
     }
 }
