@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\Drawables\BackgroundColorDrawer.cs" />
     <Compile Include="Core\Drawables\GraphicsSizeDrawer.cs" />
     <Compile Include="Core\DrawingContext.cs" />
     <Compile Include="Core\ExpressionParsers\BackgroundColorParser.cs" />

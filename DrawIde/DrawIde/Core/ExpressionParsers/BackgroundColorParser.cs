@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DrawIde.Core.Drawables;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +11,6 @@ namespace DrawIde.Core.ExpressionParsers
     class BackgroundColorParser : IExpressionParser
     {
         private static readonly string MATCH = @"^BACKGROUND (?<color>((red)|(black)|(green)|(blue)|(grey)|(pink)))$";
-
 
         public bool MatchesExpression(string expression)
         {
@@ -26,8 +26,7 @@ namespace DrawIde.Core.ExpressionParsers
             }
 
             var color = match.Groups["color"].Value;
-            //return new GraphicsBackgroundColor(color);
-            return null;
+            return new BackgroundColorDrawer(color);
         }
     }
 }
