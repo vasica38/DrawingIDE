@@ -6,6 +6,11 @@ namespace DrawIde.Core
 {
     class DrawingContext : IDrawingContext
     {
+        private readonly DrawingForm drawingForm;
+        private string color;
+        private int fontSize;
+        private int stroke;
+
         public int Heigth
         {
             get
@@ -17,6 +22,7 @@ namespace DrawIde.Core
                 this.drawingForm.Height = value;
             }
         }
+
         public int Width
         {
             get
@@ -29,10 +35,53 @@ namespace DrawIde.Core
             }
         }
 
-        public string BackgroundColor { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string Color { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public int FontSize { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public int Stroke { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public string BackgroundColor
+        {
+            get
+            {
+                return this.drawingForm.BackColor.Name;
+            }
+            set
+            {
+                this.drawingForm.BackColor = System.Drawing.Color.FromName(value);
+            }
+        }
+
+        public string Color
+        {
+            get
+            {
+                return this.color;
+            }
+            set
+            {
+                this.color = value;
+            }
+        }
+
+        public int FontSize
+        {
+            get
+            {
+                return this.fontSize;
+            }
+            set
+            {
+                this.fontSize = value;
+            }
+        }
+
+        public int Stroke
+        {
+            get
+            {
+                return this.stroke;
+            }
+            set
+            {
+                this.stroke = value;
+            }
+        }
 
         public Graphics Graphics
         {
@@ -41,8 +90,6 @@ namespace DrawIde.Core
                 return this.drawingForm.Graphics;
             }
         }
-
-        private readonly DrawingForm drawingForm;
 
         public DrawingContext(DrawingForm drawingForm)
         {
