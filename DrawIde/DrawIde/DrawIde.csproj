@@ -49,6 +49,7 @@
     <Compile Include="Core\Drawables\ColorSetterDrawer.cs" />
     <Compile Include="Core\Drawables\BackgroundColorDrawer.cs" />
     <Compile Include="Core\Drawables\GraphicsSizeDrawer.cs" />
+    <Compile Include="Core\Drawables\ImageDrawer.cs" />
     <Compile Include="Core\Drawables\LineDrawer.cs" />
     <Compile Include="Core\Drawables\RectangleDrawer.cs" />
     <Compile Include="Core\Drawables\StrokeSizeDrawer.cs" />
@@ -63,6 +64,7 @@
     <Compile Include="Core\ExpressionParsers\FontStyleParser.cs" />
     <Compile Include="Core\ExpressionParsers\ForInstructionParser.cs" />
     <Compile Include="Core\ExpressionParsers\GraphicsSizeParser.cs" />
+    <Compile Include="Core\ExpressionParsers\ImageParser.cs" />
     <Compile Include="Core\ExpressionParsers\LineDrawerParser.cs" />
     <Compile Include="Core\ExpressionParsers\RectangleDrawerParser.cs" />
     <Compile Include="Core\ExpressionParsers\StrokeSizeParser.cs" />

@@ -16,6 +16,7 @@ namespace DrawIde.Core.ExpressionParsers
             this.expressionParsers.Add(new CircleDrawerParser());
             this.expressionParsers.Add(new FontStyleParser());
             this.expressionParsers.Add(new ForInstructionParser());
+            this.expressionParsers.Add(new ImageParser());
             this.expressionParsers.Add(new LineDrawerParser());
             this.expressionParsers.Add(new RectangleDrawerParser());
             this.expressionParsers.Add(new StrokeSizeParser());

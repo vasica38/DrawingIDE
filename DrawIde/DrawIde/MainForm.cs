@@ -88,7 +88,15 @@ namespace DrawIde
                 var drawable = this.expressionParser.Parse(expression);
                 if (drawable != null)
                 {
-                    drawable.Draw(this.drawingContext);
+                    try
+                    {
+                        drawable.Draw(this.drawingContext);
+                    }
+                    catch (Exception exception)
+                    {
+                        statusTextBox.Text = string.Format("Invalid expression '{0}'\nException: '{1}'", expression, exception.Message);
+                        break;
+                    }
                 }
                 else
                 {
