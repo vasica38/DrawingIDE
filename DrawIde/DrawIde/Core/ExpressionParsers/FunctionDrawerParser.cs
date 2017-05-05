@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace DrawIde.Core.ExpressionParsers
 {
-    class TextDrawerParser : IExpressionParser
+    class FunctionDrawerParser : IExpressionParser
     {
-        private static readonly string MATCH = @"^TEXT ['](?<text>.+)['][,]?[ ]*(?<x>[0-9]+)[,][ ]*(?<y>[0-9]+)$";
+        private static readonly string MATCH = @"^FUNCTION (?<function>'[xX\-\+\*\/\(\)0123456789\^]+')$";
 
         public bool MatchesExpression(string expression)
         {
@@ -25,17 +25,9 @@ namespace DrawIde.Core.ExpressionParsers
                 return null;
             }
 
-            var text = (match.Groups["text"].Value);
-            var x = Convert.ToInt32(match.Groups["x"].Value);
-            var y = Convert.ToInt32(match.Groups["y"].Value);
+            var function = match.Groups["function"].Value;
 
-            return new TextDrawer(text, x, y);
-        }
-
-        public IDrawable Parse(string[] expressions, ref int index)
-        {
-            index++;
-            return Parse(expressions[index - 1]);
+            return new FunctionDrawer(function);
         }
     }
 }
