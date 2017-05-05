@@ -9,7 +9,7 @@ namespace DrawIde.Core.ExpressionParsers
 {
     class ForInstructionParser : IExpressionParser
     {
-        private static readonly string MATCH = @"FOR (?<index>(i[ ]*=[0-9]+))[ ]+(TO)[ ]+(?<limit>([0-9]+))[ ]+DO[ ]*$";
+        private static readonly string MATCH = @"^FOR (?<index>(i[ ]*=[0-9]+))[ ]+(TO)[ ]+(?<limit>([0-9]+))[ ]+DO[ ]*$";
 
         public bool MatchesExpression(string expression)
         {

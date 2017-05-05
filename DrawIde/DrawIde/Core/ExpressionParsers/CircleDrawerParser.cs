@@ -9,7 +9,7 @@ namespace DrawIde.Core.ExpressionParsers
 {
     class CircleDrawerParser : IExpressionParser
     {
-        private static readonly string MATCH = @"CIRCLE (?<x>[0-9]+)[,][ ]+(?<y>[0-9]+)[,][ ]+(?<radius>[0-9]+)[ ]?$";
+        private static readonly string MATCH = @"^CIRCLE (?<x>[0-9]+)[,][ ]+(?<y>[0-9]+)[,][ ]+(?<radius>[0-9]+)[ ]?$";
 
         public bool MatchesExpression(string expression)
         {

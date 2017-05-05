@@ -6,7 +6,7 @@ namespace DrawIde.Core.ExpressionParsers
 {
     class GraphicsSizeParser : IExpressionParser
     {
-        private static readonly string MATCH = @"DRAW (?<height>[0-9]+)[,][ ]*(?<width>[0-9]+)$";
+        private static readonly string MATCH = @"^DRAW (?<height>[0-9]+)[,][ ]*(?<width>[0-9]+)$";
 
         public bool MatchesExpression(string expression)
         {

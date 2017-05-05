@@ -9,7 +9,7 @@ namespace DrawIde.Core.ExpressionParsers
 {
     class BackgroundColorParser : IExpressionParser
     {
-        private static readonly string MATCH = @"BACKGROUND (?<color>((red)|(black)|(green)|(blue)|(grey)|(pink)))";
+        private static readonly string MATCH = @"^BACKGROUND (?<color>((red)|(black)|(green)|(blue)|(grey)|(pink)))$";
 
 
         public bool MatchesExpression(string expression)
