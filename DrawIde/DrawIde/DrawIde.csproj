@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\Drawables\AnimationDrawer.cs" />
     <Compile Include="Core\Drawables\CircleDrawer.cs" />
     <Compile Include="Core\Drawables\ColorSetterDrawer.cs" />
     <Compile Include="Core\Drawables\BackgroundColorDrawer.cs" />
@@ -54,12 +55,14 @@
     <Compile Include="Core\Drawables\GraphicsSizeDrawer.cs" />
     <Compile Include="Core\Drawables\ImageDrawer.cs" />
     <Compile Include="Core\Drawables\LineDrawer.cs" />
+    <Compile Include="Core\Drawables\MouseDrawer.cs" />
     <Compile Include="Core\Drawables\RectangleDrawer.cs" />
     <Compile Include="Core\Drawables\StrokeSizeDrawer.cs" />
     <Compile Include="Core\Drawables\TextDrawer.cs" />
     <Compile Include="Core\Drawables\TextFontDrawer.cs" />
     <Compile Include="Core\Drawables\TextSizeDrawer.cs" />
     <Compile Include="Core\DrawingContext.cs" />
+    <Compile Include="Core\ExpressionParsers\AnimationDrawerParser.cs" />
     <Compile Include="Core\ExpressionParsers\BackgroundColorParser.cs" />
     <Compile Include="Core\ExpressionParsers\CircleDrawerParser.cs" />
     <Compile Include="Core\ExpressionParsers\ColorSetterParser.cs" />

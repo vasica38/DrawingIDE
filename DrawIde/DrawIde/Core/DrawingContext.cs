@@ -103,7 +103,6 @@ namespace DrawIde.Core
                 return this.drawingForm.Graphics;
             }
         }
-
         public DrawingContext(DrawingForm drawingForm)
         {
             this.drawingForm = drawingForm;

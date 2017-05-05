@@ -10,6 +10,8 @@ namespace DrawIde.Core.ExpressionParsers
         public ExpressionParser()
         {
             this.expressionParsers = new List<IExpressionParser>();
+
+            this.expressionParsers.Add(new AnimationDrawerParser());
             this.expressionParsers.Add(new GraphicsSizeParser());
             this.expressionParsers.Add(new BackgroundColorParser());
             this.expressionParsers.Add(new ColorSetterParser());
