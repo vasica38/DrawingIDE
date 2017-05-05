@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DrawIde.Core.Drawables;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,8 +27,7 @@ namespace DrawIde.Core.ExpressionParsers
             }
 
             var color = match.Groups["color"].Value;
-            //return new GraphicsColorSetter(color);
-            return null;
+            return new ColorSetterDrawer(color);
         }
     }
 }
