@@ -33,5 +33,11 @@ namespace DrawIde.Core.ExpressionParsers
 
             return new EllipseDrawer(x1, y1, x2, y2, fill);
         }
+
+        public IDrawable Parse(string[] expressions, ref int index)
+        {
+            index++;
+            return Parse(expressions[index - 1]);
+        }
     }
 }

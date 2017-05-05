@@ -123,7 +123,6 @@ namespace DrawIde.Core.Drawables
 
         private double IntPow(double x, int pow)
         {
-            double p = 1;
             double y = 1;
             while (pow > 1)
             {
