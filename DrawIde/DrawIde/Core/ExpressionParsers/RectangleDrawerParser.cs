@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DrawIde.Core.Drawables;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -28,8 +29,8 @@ namespace DrawIde.Core.ExpressionParsers
             var y1 = Convert.ToInt32(match.Groups["y1"].Value);
             var x2 = Convert.ToInt32(match.Groups["x2"].Value);
             var y2 = Convert.ToInt32(match.Groups["y2"].Value);
-            //return new GraphicsRectangleDrawer(x1,y1,x2,y2);
-            return null;
+
+            return new RectangleDrawer(x1,y1,x2,y2);
         }
     }
 }
